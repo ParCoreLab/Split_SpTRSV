@@ -30,9 +30,9 @@ After installing the required software tools on a supported CPU-GPU system, fram
 ### - Downloading the repository:
 To download the repository, use the command line:
 
-'''bash
+```bash
 git clone https://github.com/ParCoreLab/Split_SpTRSV
-'''
+```
 ### - Compiling the code: 
 
 
