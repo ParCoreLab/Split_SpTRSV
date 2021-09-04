@@ -16,7 +16,7 @@ The framework requires following software tools to be available (installed) on t
 The framework has been evaluated on CentOS (release 7.4.1708) and Ubuntu 18.04.1
 
 #### i) libUFget Library:
-The [libUFget library](https://zenodo.org/record/897632#.YTOngykzZuQ) provides a C interface to SuiteSparse Matrix Collection (previously University of Florida Sparse Matrix Collection [2]). The framework uses the library to automatically download matrices from the SuiteSparse Matrix Collection. Follow the installation instructions provided in INSTALL.md in the main directory of libUFget library (https://github.com/ParCoreLab/Split_SpTRSV/extras/libUFget-1.0.3/INSTALL.md). 
+The [libUFget library](https://zenodo.org/record/3894753#.YTO8YykzZuQ) provides a C interface to SuiteSparse Matrix Collection (previously University of Florida Sparse Matrix Collection [2]). The framework uses the library to automatically download matrices from the SuiteSparse Matrix Collection. Follow the installation instructions provided in INSTALL.md in the main directory of libUFget library (https://github.com/ParCoreLab/Split_SpTRSV/extras/libUFget-1.0.3/INSTALL.md). 
 
 #### ii) CUDA Toolkit
 For compiling and running the code on NVIDIA GPUs, framework utilizes [NVIDIAs CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit). For evaluation of the framework [1], CUDA version 10.1 is used.
