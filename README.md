@@ -34,12 +34,38 @@ To download the repository, use the command line:
 git clone https://github.com/ParCoreLab/Split_SpTRSV
 ```
 ### - Compiling the code: 
+To compile the code, run the make command in the main directory.
 
+```bash
+make
+```
+
+### - Running the code:
+The framework can be run in one of the three modes, (1) Mode 1: SpTRSV executes in split execution mode, where the execution may be split between CPU or GPU, or run on a single platform, as determined by the framework, (2) Mode 2: SpTRSV executes on the GPU platform using ELMC algorithm [2], (3) Mode 3: SpTRSV executes on the CPU platform using Intel MKL library.
+
+To run the framework in one of these modes for a square matrix (with a given ID) automatically downloaded from the SuiteSparse Matrix Collection, the command line looks like the following:
+
+```bash
+./silu_test matrix_id mode
+```
+
+For example, to run the framework in split SpTRSV execution mode for matrix "FullChip" (ID 2380), use the command line:
+
+```bash
+./silu_test 2380 1
+```
+
+Replace 1 with 2 or 3 to run unified SpTRSV for the matrix on GPU or CPU, respectively. 
+
+ 
 
 ## References
 
 [1] N. Ahmad, B. Yilmaz and D. Unat, "A Split Execution Model for SpTRSV," in IEEE Transactions on Parallel and Distributed Systems, vol. 32, no. 11, pp. 2809-2822, 1 Nov. 2021, doi: 10.1109/TPDS.2021.3074501.
 
 [2] T. A. Davis and Y. Hu, "The University of Florida sparse matrix collection", ACM Trans. Math. Softw., vol. 38, no. 1, Dec. 2011.
+
+[3] R. Li, "On parallel solution of sparse triangular linear systems in CUDA", CoRR, 2007.
+
 
 
