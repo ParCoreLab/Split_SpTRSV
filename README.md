@@ -43,6 +43,7 @@ make
 ### - Running the code:
 The framework can be run in one of the three modes, (1) Mode 1: SpTRSV executes in split execution mode, where the execution may be split between CPU or GPU, or run on a single platform, as determined by the framework, (2) Mode 2: SpTRSV executes on the GPU platform using ELMC algorithm [2], (3) Mode 3: SpTRSV executes on the CPU platform using Intel MKL library.
 
+#### 1) Automatic matrix download
 To run the framework in one of these modes for a square matrix (with a given ID) automatically downloaded from the SuiteSparse Matrix Collection, the command line looks like the following:
 
 ```bash
@@ -57,7 +58,21 @@ For example, to run the framework in split SpTRSV execution mode for matrix "Ful
 
 Replace 1 with 2 or 3 to run unified SpTRSV for the matrix on GPU or CPU, respectively. 
 
- 
+#### 2) Using a matrix stored in Matrix Market Format
+If instead of downloading the matrix, it is required to use an available matrix in matrix market format (.mtx extension), one may use the following command line:
+
+```bash
+./silu_test matrix_id mode filename.mtx
+```
+
+Here, filename.mtx is the filename of the matrix file in the Matrix Market Format. In this case, matrix_id is "don't care" and may be any integer number (e.g. 10). "mode" is same as previously described for "Automatic matrix download" case.
+
+## Supported SpTRSV Algorithms:
+In [1], framework is evaluated with split execution using ELMC, MKL and HTS SpTRSV algorithms. However, implementation for other algorithms is also available. These include Sync Free algorithm [4], SLFC algorithm (a predecessor of ELMC) [5], SpTRSV using cuSPARSE v2 [6] and ELMR (a row-wise version of ELMC) [3].
+
+In the original version of ths split execution framework, the HTS library has been separately evaluated using the code available in (https://github.com/ParCoreLab/Split_SpTRSV/extras/hts) for the proof of concept. It is planned to integrate the HTS code into the framework. Moreover, we also plan to re-design the code so as to define separate classes for each SpTRSV algorithm and polymorphically select appropriate algorithm at runtime. This will make the code cleaner and more easier to understand, use and modify.    
+
+Note: Thanks to Martin Köhler for making necessary changes to libUFget as per our request and releasing a newer version of libUFget (1.0.3).  
 
 ## References
 
@@ -65,7 +80,14 @@ Replace 1 with 2 or 3 to run unified SpTRSV for the matrix on GPU or CPU, respec
 
 [2] T. A. Davis and Y. Hu, "The University of Florida sparse matrix collection", ACM Trans. Math. Softw., vol. 38, no. 1, Dec. 2011.
 
-[3] R. Li, "On parallel solution of sparse triangular linear systems in CUDA", CoRR, 2007.
+[3] R. Li and C. Zhang, "Efficient parallel implementations of sparse triangular solves for GPU architectures", Proc. SIAM Conf. Parallel Process. Sci. Comput., pp. 106-117, 2020.
+
+[4] W. Liu, A. Li, J. D. Hogg, I. S. Duff and B. Vinter, "Fast synchronization-free algorithms for parallel sparse triangular solves with multiple right-hand sides", Concurrency Computation: Practice Experience, vol. 29, no. 21, 2017.
+
+[5] R. Li, "On parallel solution of sparse triangular linear systems in CUDA", CoRR, 2007.
+
+[6] N. Corporation, "NVIDIA cuSPARSE library", 2021.
+
 
 
 
