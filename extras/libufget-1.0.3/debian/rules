@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+%:
+	dh $@ 
+
+override_dh_auto_build-indep:
+	{ cat Doxyfile && echo "HTML_TIMESTAMP=NO"; } | doxygen -
+	# cp -av doc/html tmp/usr/share/doc/libufget/
+
+override_dh_clean:
+	rm -rf doc
+	dh_clean
+

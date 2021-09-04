@@ -1,0 +1,27 @@
+libufget (1.0.3) UNRELEASED; urgency=medium
+
+  * Fix URL. The collection now moved to http://sparse-files.engr.tamu.edu
+  * Fix warning with gcc 9.x
+
+ -- Martin Köhler <komart@hugin>  Mon, 15 Jun 2020 15:54:51 +0200
+
+libufget (1.0.2) UNRELEASED; urgency=medium
+
+  * Fix URL. The collection now moved to https://sparse.tamu.edu
+
+ -- Martin Köhler <koehlerm@mpi-magdeburg.mpg.de>  Mon, 15 Jun 2020 15:50:40 +0200
+
+libufget (1.0.1) unreleased; urgency=medium
+
+  * Fix URL. The UFcollection now uses https only
+  * Enable FOLLOWLOCATION for libcurl
+  * Fix NAN with xmin and xmax field.
+  * Database version set to 2
+
+ -- Martin Koehler <koehlerm@mpi-magdeburg.mpg.de>  Wed, 20 Sep 2017 09:26:35 +0200
+
+libufget (1.0.0) unreleased; urgency=low
+
+  * Initial Release.
+
+ -- Martin Koehler <koehlerm@mpi-magdeburg.mpg.de>  Tue, 21 Jun 2017 11:12:41 +0100

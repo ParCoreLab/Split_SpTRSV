@@ -1,0 +1,110 @@
+Source: libufget
+Priority: optional
+Maintainer: Martin Koehler <koehlerm@mpi-magdeburg.mpg.de>
+Build-Depends: debhelper (>= 8.0.0), cmake, libmatio-dev, libblas-dev, libsqlite3-dev, libcurl4-openssl-dev,
+ libarchive-dev, liblzma-dev, doxygen (>= 1.8.0 )
+Standards-Version: 3.9.4
+Section: libs
+Homepage: http://www.mpi-magdeburg.mpg.de/csc/
+
+Package: libufget-dev
+Section: libdevel
+Architecture: any
+Depends: libufget (= ${binary:Version}), ${misc:Depends}
+Description: Development Headers for libufget
+ The UF Sparse Collection ( http://www.cise.ufl.edu/research/sparse/ ) is a huge
+ collection of sparse matrices for academic research and benchmarking of
+ algorithms such a linear equation solvers or eigenvalue solvers. The collection 
+ is normally used via a web interface or a MATLAB script which accesses the
+ collection and download matrices by their ID or their name. 
+ . 
+ The libUFget library provides a C interface to the UF Sparse Collection which
+ allows one to access the collection form C codes and to download the matrices as in
+ the MATLAB interface. Furthermore, it converts the database into an SQLITE
+ database which than can be query via the SQL language to select a set of
+ matrices according to the requirements of the user. Using an iterator it is
+ possible to perform benchmarks for all matrices matched by the query. 
+ .
+ Additionally the library provides function to read the matrices into the
+ coordinate storage format as well as function to convert them into Compressed
+ Sparse Row (CSR) and Compressed Sparse Column (CSC) storage. All functions
+ support 32 bit integers as well as 64 bit integers to allow even to use the
+ largest matrices currently available in the collection and to support 64 bit
+ integer enabled codes directly without further data manipulation. 
+
+
+Package: libufget-doc
+Section: libdevel
+Architecture: all
+Depends: ${misc:Depends}
+Description: Documentation for libufget
+ The UF Sparse Collection ( http://www.cise.ufl.edu/research/sparse/ ) is a huge
+ collection of sparse matrices for academic research and benchmarking of
+ algorithms such a linear equation solvers or eigenvalue solvers. The collection 
+ is normally used via a web interface or a MATLAB script which accesses the
+ collection and download matrices by their ID or their name. 
+ . 
+ The libUFget library provides a C interface to the UF Sparse Collection which
+ allows one to access the collection form C codes and to download the matrices as in
+ the MATLAB interface. Furthermore, it converts the database into an SQLITE
+ database which than can be query via the SQL language to select a set of
+ matrices according to the requirements of the user. Using an iterator it is
+ possible to perform benchmarks for all matrices matched by the query. 
+ .
+ Additionally the library provides function to read the matrices into the
+ coordinate storage format as well as function to convert them into Compressed
+ Sparse Row (CSR) and Compressed Sparse Column (CSC) storage. All functions
+ support 32 bit integers as well as 64 bit integers to allow even to use the
+ largest matrices currently available in the collection and to support 64 bit
+ integer enabled codes directly without further data manipulation. 
+
+Package: libufget-bin
+Section: libdevel
+Architecture: any 
+Depends: libufget (= ${binary:Version}), ${misc:Depends}, ${shlibs:Depends} 
+Description: Utilities for libufget.
+ The UF Sparse Collection ( http://www.cise.ufl.edu/research/sparse/ ) is a huge
+ collection of sparse matrices for academic research and benchmarking of
+ algorithms such a linear equation solvers or eigenvalue solvers. The collection 
+ is normally used via a web interface or a MATLAB script which accesses the
+ collection and download matrices by their ID or their name. 
+ . 
+ The libUFget library provides a C interface to the UF Sparse Collection which
+ allows one to access the collection form C codes and to download the matrices as in
+ the MATLAB interface. Furthermore, it converts the database into an SQLITE
+ database which than can be query via the SQL language to select a set of
+ matrices according to the requirements of the user. Using an iterator it is
+ possible to perform benchmarks for all matrices matched by the query. 
+ .
+ Additionally the library provides function to read the matrices into the
+ coordinate storage format as well as function to convert them into Compressed
+ Sparse Row (CSR) and Compressed Sparse Column (CSC) storage. All functions
+ support 32 bit integers as well as 64 bit integers to allow even to use the
+ largest matrices currently available in the collection and to support 64 bit
+ integer enabled codes directly without further data manipulation. 
+
+Package: libufget
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: C interface to the UF Sparse Matrix Collection 
+ The UF Sparse Collection ( http://www.cise.ufl.edu/research/sparse/ ) is a huge
+ collection of sparse matrices for academic research and benchmarking of
+ algorithms such a linear equation solvers or eigenvalue solvers. The collection 
+ is normally used via a web interface or a MATLAB script which accesses the
+ collection and download matrices by their ID or their name. 
+ . 
+ The libUFget library provides a C interface to the UF Sparse Collection which
+ allows to access the collection form C codes and to download the matrices as in
+ the MATLAB interface. Furthermore, it converts the database into an SQLITE
+ database which than can be query via the SQL language to select a set of
+ matrices according to the requirements of the user. Using an iterator it is
+ possible to perform benchmarks for all matrices matched by the query. 
+ .
+ Additionally the library provides function to read the matrices into the
+ coordinate storage format as well as function to convert them into Compressed
+ Sparse Row (CSR) and Compressed Sparse Column (CSC) storage. All functions
+ support 32 bit integers as well as 64 bit integers to allow even to use the
+ largest matrices currently available in the collection and to support 64 bit
+ integer enabled codes directly without further data manipulation. 
+

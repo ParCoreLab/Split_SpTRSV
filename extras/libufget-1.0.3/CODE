@@ -1,0 +1,20 @@
+name: libUFget - The UF Sparse Collection C interface
+shortname: libufget
+version: 1.0.3
+release-date: 2020-06-12
+id: 10.5281/zenodo.814642
+id-type: doi
+author: Martin Köhler
+orcid: 0000-0003-2338-9904
+topic: Science, Mathematics, Numerical Linear Algebra
+type: Library
+license: GPLv2+
+license-type: open
+repository: gitlab.mpi-magdeburg.mpg.de/software/libufget-release
+repository-type: git
+language: C
+dependencies: build-essential, cmake, libmatio-dev, libblas-dev, libsqlite3-dev, libcurl4-openssl-dev, libarchive-dev, liblzma-dev
+systems: Linux, POSIX
+website: www.mpi-magdeburg.mpg.de/software/libufget-release
+keywords: Sparse Matrix, UF Matrix Collection
+

@@ -1,0 +1,6 @@
+The Debian Package libufget
+---------------------------
+
+The libufget implements a C interface to the UF Sparse Matrix Collection. 
+
+ -- Martin Koehler <koehlerm@mpi-magdeburg.mpg.de>  Tue, 02 Feb 2016 11:12:41 +0100

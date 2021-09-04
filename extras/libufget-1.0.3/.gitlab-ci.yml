@@ -1,0 +1,79 @@
+#image: precise:base
+#before_script:
+#    - apt-get install --yes cmake libmatio-dev libblas-dev libsqlite3-dev libcurl4-openssl-dev
+#    - apt-get install --yes libarchive-dev liblzma-dev
+stages:
+  - build
+
+
+ubuntu1604:
+  stage: build
+  image: docker-registry.csc.mpi-magdeburg.mpg.de:5000/ci-images/minimal/ubuntu:xenial
+  script:
+    - apt-get update
+    - apt-get install --yes cmake libmatio-dev libblas-dev libsqlite3-dev libcurl4-openssl-dev
+    - apt-get install --yes libarchive-dev liblzma-dev
+    - mkdir build/
+    - cd build
+    - cmake -DCMAKE_BUILD_TYPE=Debug ../
+    - make
+    - ./ufget-update update
+    - ./ufget-update download HB 1138_bus
+
+ubuntu1804:
+  stage: build
+  image: docker-registry.csc.mpi-magdeburg.mpg.de:5000/ci-images/minimal/ubuntu:bionic
+  script:
+    - apt-get update
+    - apt-get install --yes cmake libmatio-dev libblas-dev libsqlite3-dev libcurl4-openssl-dev
+    - apt-get install --yes libarchive-dev liblzma-dev
+    - mkdir build/
+    - cd build
+    - cmake -DCMAKE_BUILD_TYPE=Debug ../
+    - make
+    - ./ufget-update update
+    - ./ufget-update download HB 1138_bus
+
+ubuntu2004:
+  stage: build
+  image: docker-registry.csc.mpi-magdeburg.mpg.de:5000/ci-images/minimal/ubuntu:focal
+  script:
+    - apt-get update
+    - apt-get install --yes cmake libmatio-dev libblas-dev libsqlite3-dev libcurl4-openssl-dev
+    - apt-get install --yes libarchive-dev liblzma-dev
+    - mkdir build/
+    - cd build
+    - cmake -DCMAKE_BUILD_TYPE=Debug ../
+    - make
+    - ./ufget-update update
+    - ./ufget-update download HB 1138_bus
+
+
+# CentOS 7 does not provide the libmatio, therefore the base images has to ship the epel 6 version from CentOS 6
+centos7:
+  stage: build
+  image: docker-registry.csc.mpi-magdeburg.mpg.de:5000/ci-images/minimal/centos:7-base
+  script:
+    - yum makecache fast
+    - yum install -y sqlite-devel libcurl-devel bzip2-devel 	zlib-devel 	matio-devel libarchive-devel openssl-devel blas-devel xz-devel
+    - mkdir build/
+    - cd build
+    - cmake -DCMAKE_BUILD_TYPE=Debug ../
+    - make
+    - ./ufget-update update
+    - ./ufget-update download HB 1138_bus
+
+centos8:
+  stage: build
+  image: docker-registry.csc.mpi-magdeburg.mpg.de:5000/ci-images/minimal/centos:8-base
+  script:
+    - dnf install -y https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    - yum install -y sqlite-devel libcurl-devel bzip2-devel 	zlib-devel 	libarchive-devel openssl-devel blas-devel xz-devel
+    - yum --enablerepo=remi install -y matio-devel
+    - mkdir build/
+    - cd build
+    - cmake -DCMAKE_BUILD_TYPE=Debug ../
+    - make
+    - ./ufget-update update
+    - ./ufget-update download HB 1138_bus
+

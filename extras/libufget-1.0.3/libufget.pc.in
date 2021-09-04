@@ -1,0 +1,10 @@
+prefix=@prefix@
+libdir=@libdir@
+includedir=${prefix}/include/
+Name: libufget
+Description: C interface to the UF Sparse Matrix Collection.
+Version: 1.0.2
+URL: http://www.mpi-magdeburg.mpg.de/mpcsc/software/libufget
+Libs: -L${libdir} -lufget -lsqlite -larchive -lz -lbz2 -llzma -lmatio -lhdf5  -lcurl -lssl -lm
+Libs.private: -lm
+Cflags: -I${includedir}

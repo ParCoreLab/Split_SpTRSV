@@ -1,0 +1,15 @@
+/**
+\defgroup collection Accessing the collection  
+ \brief Routines to access and update the collection. 
+
+\defgroup query Query the collection
+ \brief This module contains function to query the collection and iterate over
+  the matrices that fit to a given selection. 
+
+\defgroup matrix Matrix related data structures and functions 
+ \brief This module contains function to download, extract, and convert matrices
+ to be used afterwards in coordinate (COO) storage, compressed row (CSR) 
+ storage, or compressed column (CSC) storage. 
+
+
+*/ 
