@@ -2,10 +2,8 @@
 HCXX     := icpc
 CXX      := nvcc
 CXXFLAGS := -std=c++14 
-CXXFLAGS += --compiler-options -mkl=sequential,-std=c++14,-Wall #-DCUSPARSE_ONLY #-DAUTO_TESTING #-DSAVE_MATRIX, #-DSTORE_BINARY, #,-DSAVE_MATRIX #-I${MKLROOT}/include
-HCXXFLAGS := -std=c++14 -fPIC 
-LDFLAGS  := -lufget -lcusparse #-lsqlite3 -larchive -lz -lbz2 -llzma -lmatio -lcurl -lssl
-#LDFLAGS  += -Wl,--start-group ${MKLROOT}/lib/intel64/libmkl_intel_ilp64.a ${MKLROOT}/lib/intel64/libmkl_sequential.a ${MKLROOT}/lib/intel64/libmkl_core.a -Wl,--end-group -lpthread -lm -ldl
+CXXFLAGS += --compiler-options -mkl=sequential,-std=c++14,-Wall  
+LDFLAGS  := -lufget -lcusparse 
 LDFLAGS  +=  --linker-options -lpthread,-lm,-ldl  #--linker-options ${MKLROOT}/lib/intel64/libmkl_intel_lp64.a,${MKLROOT}/lib/intel64/libmkl_sequential.a,${MKLROOT}/lib/intel64/libmkl_core.a,-lpthread,-lm,-ldl
 BUILD    := ./build
 OBJ_DIR  := $(BUILD)/objects
