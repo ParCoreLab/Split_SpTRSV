@@ -3,14 +3,8 @@
 // Author: Najeeb Ahmad
 
 
-//#include "common.h"
 #include "matrix.h"
-//#include "util.h"
-//#include "SILU.h"
-//#include "quicksort.h"
-//#include "policy.h"
 #include "mmio.h"
-//#include <cuda_runtime.h>
 #include "hts_test_util.hpp"
 
 using namespace std;
