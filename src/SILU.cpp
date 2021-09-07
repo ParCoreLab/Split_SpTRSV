@@ -4,22 +4,16 @@
 // Author: Najeeb Ahmad
 
 #include "SILU.h"
-//#include "SILU_GPU.h"
 #include "dummyFactorize.h"
 #include "sptrsv_syncfree_serialref.h"
 #include "quicksort.h"
-//#include "hts_test_util.hpp"
-//#include "hts.hpp"
 #include <cuda_runtime.h>
 #include <cusparse_v2.h>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <math.h>
-//using namespace SpMP;
 using namespace std::chrono;
-//using namespace Experimental;
-// Default constructor
 
 #define CUDA_RT_CALL(call)                                                                  \
     {                                                                                       \
@@ -181,26 +175,16 @@ int SILU::SaveMatrixFeatures(csr_matrix *tri_mat, std::string filename)
 #else
         outfile << i+1 << ",";
         outfile << levels.nlevel << ","; 
-        //printf("A");
         outfile << levels.level_of_row[i] << ",";
-        //printf("B");
         outfile << levels.level_delta[i] << ",";
-        //printf("C");
         outfile << std::fixed << std::setprecision(1) << levels.parallelism[i] << ",";
-        //printf("D");
         outfile << levels.nnz_per_row[i] << ",";
-        //printf("E");
         outfile << levels.avg_row_nnzs[i] << ",";
-        //printf("F");
         outfile << levels.avg_col_nnzs[i] << ",";
-        //printf("G");
         outfile << levels.avg_level_delta[i] << ",";
-        //printf("H");
         outfile << levels.col_center[i] << ",";
         outfile << levels.nnz_per_col[i] << "\n";        
 #endif
-        //printf("I");
-        //printf("%d\n",i);
     }
 
     outfile.close();    
