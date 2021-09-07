@@ -7,7 +7,7 @@ For more details and performance evaluation and analysis results of the framewor
 Following are the pre-requisites to use or test the framework:
 
 ### 1) Hardware Platform
-The framework is designed to work on heterogeneous CPU-GPU systems with current support for Intel CPUs and NVIDIA GPUs. In [1], the framework has been evaluated on two heterogeneous machines, (i) Intel Xeon Gold (6148) CPU with NVIDIA Tesla V100 GPU, and (ii) Intel Core I7 (8700K) CPU with NVIDIA GTX1080 Ti GPU. 
+The framework is designed to work on heterogeneous CPU-GPU systems with current support for Intel CPUs and NVIDIA GPUs (Compute capability 6.0 or later). In [1], the framework has been evaluated on two heterogeneous machines, (i) Intel Xeon Gold (6148) CPU with NVIDIA Tesla V100 GPU, and (ii) Intel Core I7 (8700K) CPU with NVIDIA GTX1080 Ti GPU. 
 
 ### 2) Software Tools
 The framework requires following software tools to be available (installed) on the machine for compilation and execution.
